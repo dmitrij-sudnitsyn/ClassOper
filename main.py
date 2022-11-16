@@ -1,18 +1,13 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 from ClassLesson import *
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+myCircle =Circle(5)
+print(myCircle)
+myCircle.set(15)
+myCircle2=Circle(30)
+if myCircle<myCircle2:
+   print(f"Длина окружности {myCircle.getL()} меньше длины окружности {myCircle2.getL()}") 
+myCircle.set(30)   
+if myCircle==myCircle2:
+   print(f"Длина окружности {myCircle.getL()} равна длины окружности {myCircle2.getL()}") 
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-    print("sdfsfwe")
-    print("Test 01")
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
