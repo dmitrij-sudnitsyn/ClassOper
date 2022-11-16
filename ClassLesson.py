@@ -44,7 +44,7 @@ class Circle:
       return self.l
 
    def __str__(self):
-     return f'Радиус окружности = {self.r} Длина окружности {2*3.14*self.r}\n'
+     return f'Радиус окружности = {self.r} Длина окружности {self.l}\n'
 
 # Проверка на равенство радиусов двух окружностей (операция = =);
 # __eq__(self, other) - x == y вызывает x.__eq__(y).
@@ -88,25 +88,31 @@ class Circle:
    def __iadd__(self,a):
       try:
        self.r+=a  
+       self.l=2*3.14*self.r
        return self
-      except TypeError:
+      except ValueError:
        print(f"  {a} тип значения не соответсвует типу операции ")     
 
-       
-      
 # __sub__(self, other) - вычитание (x - y).
    def __sub__(self,a):
       try:
-       return Circle(self.r-a)
-      except TypeError:
+       if self.r-a <0:
+        print(f" {self.r-a} Радиус и длина не может быть отрицательной - ")
+       else: 
+        return Circle(self.r-a)
+      except ValueError:
        print(f"  {a} тип значения не соответсвует типу операции ")     
 
 
 # __isub__(self, other) - -=.
    def __isub__(self,a):
       try:
-       self.r-=a  
-       return self
-      except TypeError:
+       if self.r-a <0:
+        print(f" {self.r-a} Радиус и длина не может быть отрицательной - ")
+       else:  
+        self.r-=a  
+        self.l=2*3.14*self.r
+        return self
+      except ValueError:
        print(f"  {a} тип значения не соответсвует типу операции ")     
 
