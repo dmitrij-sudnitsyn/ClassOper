@@ -36,8 +36,30 @@ def testFlat():
   myFlat02=Flat(50.70,50000)
   print(myFlat01)
   print(myFlat02)
+
+  if myFlat01==myFlat02:
+     print(f" Площадь квартиры {myFlat01.square} равна площади квартиры {myFlat02.square}")
+
+  if myFlat01!=myFlat02:
+     print(f" Площадь квартиры {myFlat01.square} не равна площади квартиры {myFlat02.square}")
+
+  myFlat01.setPrice(60000)
   
 
+  if myFlat01>myFlat02:
+     print(f" Цена квартиры {myFlat01.price} больше цены квартиры {myFlat02.price}")
+
+  myFlat01.setPrice(50000)
+  if myFlat01>=myFlat02:
+     print(f" Цена квартиры {myFlat01.price}  больше или равна цены квартиры {myFlat02.price}")
+
+  myFlat02.setPrice(60000)
+  if myFlat01<myFlat02:
+     print(f" Цена квартиры {myFlat01.price} меньше цены квартиры {myFlat02.price}")
+
+  myFlat02.setPrice(50000)
+  if myFlat01<=myFlat02:
+     print(f" Цена квартиры {myFlat01.price} меньше или равно цены квартиры {myFlat02.price}")
 
 
 testFlat()  

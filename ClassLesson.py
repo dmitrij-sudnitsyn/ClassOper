@@ -247,6 +247,21 @@ class Flat:
          self.square = square
       if is_number(price):
          self.price = price
+
+   def getsquare(self):
+      return self.square 
+
+   def getprice(self):
+      return self.price
+
+
+   def setSquare(self,a):
+     if is_number(a):   
+        self.square= a
+
+   def setPrice(self,a):
+     if is_number(a):   
+        self.price= a
    
    def __str__(self) -> str:
      return f"Площадь квартиры {self.square} ее цена {self.price}"
