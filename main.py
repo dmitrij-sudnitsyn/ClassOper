@@ -32,15 +32,41 @@ def testCircle():
  print(myCircle)
 
 def testAirplane():
-  myAirplane01=Airplane("il",250,150)
-  myAirplane02=Airplane("il",250,150)
+  myAirplane01=Airplane("AN",250,150)
+  myAirplane02=Airplane("il",150,50)
   print(myAirplane01)
+  print(myAirplane02)
 # ■■Проверка на равенство типов самолетов (операция = =);
 
 # ■■Увеличение и уменьшение пассажиров в салоне самолета (операции + - += -=);
+  myAirplane01=myAirplane01+50
+  print(myAirplane01)
+  myAirplane01+=50
+  print(myAirplane01)
+
+  myAirplane01=myAirplane01-50
+  print(myAirplane01)
+
+  myAirplane01-=50
+  print(myAirplane01)  
 
 
 # ■■Сравнение двух самолетов по максимально возможному количеству пассажиров на борту (операции > < <= >=).
+  myAirplane01.setMaxKolPass(250)
+  if myAirplane01>myAirplane02:
+    print(f" Самолет типа {myAirplane01.TypeAirplane} по максимальному количеству пассажиров {myAirplane01.MaxKolPass} больще чем самолет типа {myAirplane02.TypeAirplane} у него  {myAirplane02.MaxKolPass}") 
+
+  myAirplane01.setMaxKolPass(150) 
+  if myAirplane01>=myAirplane02:
+    print(f" Самолет типа {myAirplane01.TypeAirplane} по максимальному количеству пассажиров {myAirplane01.MaxKolPass} больще или равен чем самолет типа {myAirplane02.TypeAirplane} у него  {myAirplane02.MaxKolPass}") 
+
+  myAirplane01.setMaxKolPass(100) 
+  if myAirplane01<myAirplane02:
+    print(f" Самолет типа {myAirplane01.TypeAirplane} по максимальному количеству пассажиров {myAirplane01.MaxKolPass} меньше чем самолет типа {myAirplane02.TypeAirplane} у него  {myAirplane02.MaxKolPass}") 
+
+  myAirplane01.setMaxKolPass(150) 
+  if myAirplane01<=myAirplane02:
+    print(f" Самолет типа {myAirplane01.TypeAirplane} по максимальному количеству пассажиров {myAirplane01.MaxKolPass} меньше или равен чем самолет типа {myAirplane02.TypeAirplane} у него  {myAirplane02.MaxKolPass}") 
 
 
 

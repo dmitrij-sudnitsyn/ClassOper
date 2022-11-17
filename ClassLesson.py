@@ -194,29 +194,34 @@ class Airplane:
   def __add__(self,a):
     if self.is_MaxKolPass(a):
      self.KolPass=self.KolPass+a
-     return Airplane(self)
+
+    return Airplane(self.TypeAirplane,self.MaxKolPass,self.KolPass)
+
 # __iadd__(self, other) - +=.
   def __iadd__(self,a):
    if self.is_MaxKolPass(a):
       self.KolPass+=a  
-      return self
+
+   return self   
 
 # __sub__(self, other) - вычитание (x - y).
   def __sub__(self,a):
     if self.is_MaxKolPass(a):
        self.KolPass=self.KolPass-a
-       return Airplane(self)
+
+    return Airplane(self.TypeAirplane,self.MaxKolPass,self.KolPass)
+
 
 # __isub__(self, other) - -=.
   def __isub__(self,a):
     if self.is_MaxKolPass(a):
        self.KolPass-=a  
-       return self
+    return self
 
 # Сравнение двух самолетов по максимально возможному количеству пассажиров на борту (операции > < <= >=).
 # __lt__(self, other) - x < y вызывает x.__lt__(y).
   def __lt__(self,other):
-     return self.MaxKolPass<=other.MaxKolPass
+     return self.MaxKolPass<other.MaxKolPass
 
 # __le__(self, other) - x ≤ y вызывает x.__le__(y).
   def __le__(self,other):
