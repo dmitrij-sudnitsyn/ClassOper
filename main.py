@@ -31,6 +31,20 @@ def testCircle():
  myCircle-=60
  print(myCircle)
 
+def testAirplane():
+  myAirplane01=Airplane("il",250,150)
+  myAirplane02=Airplane("il",250,150)
+  print(myAirplane01)
+# ■■Проверка на равенство типов самолетов (операция = =);
+
+# ■■Увеличение и уменьшение пассажиров в салоне самолета (операции + - += -=);
+
+
+# ■■Сравнение двух самолетов по максимально возможному количеству пассажиров на борту (операции > < <= >=).
+
+
+
+
 def testFlat():
   myFlat01=Flat(35.6,30000)
   myFlat02=Flat(50.70,50000)
@@ -63,5 +77,6 @@ def testFlat():
 
 
 
-testCircle()
+# testCircle()
+testAirplane()
 # testFlat()  
