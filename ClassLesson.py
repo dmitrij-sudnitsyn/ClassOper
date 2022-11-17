@@ -24,7 +24,7 @@ class Circle:
       else:
        print(f"переменная {r} не числового типа")   
 
-   def __set__(self,r):
+   def set(self,r):
       if is_number(r):
        self.r=r
        self.l=2*3.14*r

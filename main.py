@@ -62,4 +62,6 @@ def testFlat():
      print(f" Цена квартиры {myFlat01.price} меньше или равно цены квартиры {myFlat02.price}")
 
 
-testFlat()  
+
+testCircle()
+# testFlat()  
