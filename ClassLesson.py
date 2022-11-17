@@ -7,7 +7,7 @@
 # Длина окружности l=2πr
 # ■■Пропорциональное изменение размеров окружности,
 # путем изменения ее радиуса (операции + - += -=).
-def is_number(self,str):
+def is_number(str):
       try:
        float(str)  
        return True
@@ -24,7 +24,7 @@ class Circle:
       else:
        print(f"переменная {r} не числового типа")   
 
-   def set(self,r):
+   def __set__(self,r):
       if is_number(r):
        self.r=r
        self.l=2*3.14*r
@@ -132,7 +132,7 @@ class Airplane:
   def __str__(self) -> str:
     return f'Самолет типа {self.TypeAirplane} количество пассажирова {self.KolPass} при максимально возможном количестве пассажиров {self.MaxKolPass}'
 
-  def set(self,TypeAirplane,KolPass):
+  def __set__(self,TypeAirplane,MaxKolPass,KolPass):
     self.TypeAirplane = TypeAirplane
     self.MaxKolPass   = MaxKolPass
     self.KolPass      = KolPass
@@ -184,6 +184,11 @@ class Airplane:
   def __eq__(self,other) -> bool:
    return self.TypeAirplane==other.TypeAirplane
 
+# __ne__(self, other) - x != y вызывает x.__ne__(y)
+#   def __ne__(self,other):
+#     return self.MaxKolPass!=other.MaxKolPass     
+
+
 # Увеличение и уменьшение пассажиров в салоне самолета (операции + - += -=);   
 # __add__(self, other) - сложение. x + y вызывает x.__add__(y).
   def __add__(self,a):
@@ -207,4 +212,75 @@ class Airplane:
     if self.is_MaxKolPass(a):
        self.KolPass-=a  
        return self
+
+# Сравнение двух самолетов по максимально возможному количеству пассажиров на борту (операции > < <= >=).
+# __lt__(self, other) - x < y вызывает x.__lt__(y).
+  def __lt__(self,other):
+     return self.MaxKolPass<=other.MaxKolPass
+
+# __le__(self, other) - x ≤ y вызывает x.__le__(y).
+  def __le__(self,other):
+     return self.MaxKolPass<=other.MaxKolPass
+
+# __gt__(self, other) - x > y вызывает x.__gt__(y).
+  def __gt__(self,other):
+     return self.MaxKolPass>other.MaxKolPass      
+
+# __ge__(self, other) - x ≥ y вызывает x.__ge__(y).      
+  def __ge__(self,other):
+     return self.MaxKolPass>=other.MaxKolPass      
+
+
+# Создать класс Flat (квартира). Реализовать перегруженные операторы:
+# ■■Проверка на равенство площадей квартир (операция==);
+# ■■Проверка на неравенство площадей квартир (операция !=);
+# ■■Сравнение двух квартир по цене (операции > < <= >=).
+class Flat:
+   def __init__(self,square,price):
+      if is_number(square):
+         self.square = square
+      if is_number(price):
+         self.price = price
+
+   def set(self,square,price):
+      if is_number(square):
+         self.square = square
+      if is_number(price):
+         self.price = price
+   
+   def __str__(self) -> str:
+     return f"Площадь квартиры {self.square} ее цена {self.price}"
+
+
+# Проверка на равенство площадей квартир (операция==);
+
+  # __eq__(self, other) - x == y вызывает x.__eq__(y).
+   def __eq__(self,other) -> bool:
+    return self.square==other.square     
+
+
+# ■■Проверка на неравенство площадей квартир (операция !=);
+# __ne__(self, other) - x != y вызывает x.__ne__(y)
+   def __ne__(self,other):
+     return self.square!=other.square     
+
+
+# Сравнение двух квартир по цене (операции > < <= >=).
+# __lt__(self, other) - x < y вызывает x.__lt__(y).
+   def __lt__(self,other):
+     return self.price<=other.price
+
+# __le__(self, other) - x ≤ y вызывает x.__le__(y).
+   def __le__(self,other):
+     return self.price<=other.price
+
+# __gt__(self, other) - x > y вызывает x.__gt__(y).
+   def __gt__(self,other):
+     return self.price>other.price      
+
+# __ge__(self, other) - x ≥ y вызывает x.__ge__(y).      
+   def __ge__(self,other):
+     return self.price>=other.price
+
+
 
