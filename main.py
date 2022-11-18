@@ -37,7 +37,15 @@ def testAirplane():
   print(myAirplane01)
   print(myAirplane02)
 # ■■Проверка на равенство типов самолетов (операция = =);
-
+  if myAirplane01==myAirplane02:
+   print(f" Это однотипные самолеты")
+   myAirplane01.setTypeAirplane("Пассажирский") 
+   print("*"*100)
+   print(myAirplane01)
+   print(myAirplane02)
+   print("*"*100)
+  if myAirplane01==myAirplane02:
+   print(f" Это однотипные самолеты")
 
 # ■■Увеличение и уменьшение пассажиров в салоне самолета (операции + - += -=);
   myAirplane01=myAirplane01+50
